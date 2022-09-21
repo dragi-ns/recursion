@@ -1,10 +1,12 @@
 function mergeSort(array) {
-  if (array.length === 1) {
+  const arrayLength = array.length;
+  if (arrayLength === 1) {
     return array;
   }
 
-  const leftSide = mergeSort(array.slice(0, Math.floor(array.length / 2)));
-  const rightSide = mergeSort(array.slice(Math.floor(array.length / 2)));
+  const arrayHalfIndex = Math.floor(arrayLength / 2);
+  const leftSide = mergeSort(array.slice(0, arrayHalfIndex));
+  const rightSide = mergeSort(array.slice(arrayHalfIndex));
 
   let leftIndex = 0;
   let rightIndex = 0;
